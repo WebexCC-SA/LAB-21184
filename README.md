@@ -1,5 +1,5 @@
-# Lab Guide for WebexOne Lab LABXXX-1234
+# Lab Guide for WebexOne Lab LAB-21184
 
-Web guide link: https://webexcc-sa.github.io/w1x_test/
+Web guide link: https://webexcc-sa.github.io/LAB-21184/
 
-PDF guide link: https://webexcc-sa.github.io/w1x_test/pdf/document.pdf
+PDF guide link: https://webexcc-sa.github.io/LAB-21184/pdf/document.pdf

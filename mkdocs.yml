@@ -1,6 +1,6 @@
 ---
-site_name: LABXXX-1234 My famous WebexOne Lab # This must begin with the session ID, e.g. LABXXX-1234 This is my Cisco Live Lab
-site_description: LABXXX-1234 My famous WebexOne Lab # must be same as "site_name"
+site_name: "LAB-21184: Using AI and Webex APIs to Develop Custom Tools and Functionality in Webex Contact Center" # This must begin with the session ID, e.g. LABXXX-1234 This is my Cisco Live Lab
+site_description: "Using AI and Webex APIs to Develop Custom Tools and Functionality in Webex Contact Center" # must be same as "site_name"
 site_author: John Doe
 copyright: Copyright &copy; 2025 Cisco
 theme:
@@ -35,7 +35,7 @@ theme:
   favicon: template_assets/webex75.png
 extra:
   generator: false
-  repo: "https://github.com/kevsimps/wx1_25.git"
+  repo: "https://github.com/WebexCC-SA/LAB-21184.git"
   site_event: test
 extra_css:
   - stylesheets/extra.css

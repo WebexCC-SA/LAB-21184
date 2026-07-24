@@ -86,8 +86,10 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format
 nav:
   - Home: index.md
-  - Lab:
-      - Overview: overview.md
+  - Welcome:
+    - Let's Get Started: welcome.md
+    - Overview: overview.md
+  - Lab:      
       - Lab 1 - Getting Started: lab1_getting_started.md
       - Conclusion: conclusion.md
   - Topologies: topologies.md

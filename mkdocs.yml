@@ -1,8 +1,8 @@
 ---
 site_name: "LAB-21184: Using AI and Webex APIs to Develop Custom Tools and Functionality in Webex Contact Center" # This must begin with the session ID, e.g. LABXXX-1234 This is my Cisco Live Lab
 site_description: "Using AI and Webex APIs to Develop Custom Tools and Functionality in Webex Contact Center" # must be same as "site_name"
-site_author: John Doe
-copyright: Copyright &copy; 2025 Cisco
+site_author: Kevin Simpson, Barry McLellan
+copyright: Copyright &copy; 2026 Cisco
 theme:
   name: material
   features:
@@ -89,10 +89,19 @@ nav:
   - Welcome:
     - Let's Get Started: welcome.md
     - Overview: overview.md
-  - Lab:      
-      - Lab 1 - Getting Started: lab1_getting_started.md
+  - Labs:      
+      # - Lab 1 - Getting Started: lab1_getting_started.md
+      - Lab 1 Bring Your Own Channel (BYOC): 
+        - Overview: lab1_overview.md
+        - Creating the Required Configurations: createAppsAndConfigs.md
+        - Setting up the Environment: lab1_setup.md
+        - Create Your Constitution: createConstitution.md
+        - Specify The Features: specifyTheFeatures.md
+        - Making a Plan: makeAPlan.md
+
       - Conclusion: conclusion.md
-  - Topologies: topologies.md
+  # - Topologies: topologies.md
+  - Tools And References: toolsAndReferences.md
   - How to use this guide:
       - Setting up and using the tool:
         - Initial Setup: howToUse/initialSetup.md

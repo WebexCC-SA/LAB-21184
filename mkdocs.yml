@@ -98,6 +98,7 @@ nav:
         - Create Your Constitution: createConstitution.md
         - Specify The Features: specifyTheFeatures.md
         - Making a Plan: makeAPlan.md
+        - Create Tasks: createTasks.md
 
       - Conclusion: conclusion.md
   # - Topologies: topologies.md
@@ -107,7 +108,7 @@ nav:
         - Initial Setup: howToUse/initialSetup.md
         - Using the tool after the initial setup: howToUse/postInitial.md
         - Publishing your changes: howToUse/syncChanges.md
-      - Styling and Advanced Features:
+      - Styling and Advanced Features: 
         - Markdown and Other References: howToUse/references.md
         - Custom Features: howToUse/customFeatures.md
         - Custom Admonitions: howToUse/admonition.md

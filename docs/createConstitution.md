@@ -13,7 +13,7 @@
 
 ??? code "Copy this prompt into the AI Agent interaction"
     ```md
-    /speckit.constitution
+    /speckit-constitution
 
     Create a constitution for the BYOC Middleware project that establishes non-negotiable principles for development and compliance.
 
@@ -21,7 +21,7 @@
 
     Define these core principles:
 
-    1. **API-First Specification**: All integrations with external services (Webex, WxCC) MUST validate every endpoint against the official published OpenAPI specification before any code is written. Endpoint URLs and spec source links MUST be documented in code comments. Any deviation from the published spec MUST be explicitly approved and filed in `deviations.md`.
+    1. **API-First Specification**: All integrations with external services (Webex, WxCC) MUST validate every endpoint against the official published OpenAPI specification located at https://github.com/webex/webex-openapi-specs before any code is written. Endpoint URLs and spec source links MUST be documented in code comments. Any deviation from the published spec MUST be explicitly approved and filed in `deviations.md`.
 
     2. **Zero Known Vulnerabilities**: All npm dependencies MUST pass `npm audit --audit-level=moderate` with zero findings before being merged. Transitive vulnerabilities rated Medium or higher MUST be resolved or the feature deferred.
 
@@ -34,6 +34,8 @@
     Include development workflow requirements, governance procedures, and version management. Use semantic versioning for amendments.
     ```
 
+
 #### Allow the Agent to create the Constitution and then review the output.
 > Navigate to .specify/memory/constitution.md  
 > Open the file in preview mode
+

@@ -2,84 +2,128 @@
 
 In this step you will be defining **WHAT** the tool does, but not how the feature will be implemented.  
 
+## Let's specify the feature
 
-??? code 
-    ```md
-    /speckit.specify
-    Use the PDF as a primary source for official API behavior and required platform semantics.
+BYOC middleware that connects Webex Messaging (bot account) to Webex Contact Center.
 
-    Create or update the feature specification for:
-    "BYOC middleware that connects Webex Messaging (bot account) to Webex Contact Center using hook-to-socket relay flow for all webhook-style deliveries."
+### Authoritative Documents
 
-    The spec must include BOTH:
-    1) Requirements grounded in BYOC.pdf and official Webex/WxCC API behavior
-    2) Non-PDF implementation requirements needed for this project's relay architecture
+- Use `webhooks.md` as the authoritative source for Webex Messaging webhooks.
+- Use the official Webex OpenAPI specification as the authoritative source for Webex
+  Messaging API endpoints.
+- Use `webhooks-cc.md` as the authoritative source for WxCC webhook events and payloads.
+- Use `bring-your-own-custom-messaging-channel.md` as the authoritative source for WxCC
+  BYOC behavior.
+- Use the official WxCC OpenAPI specification as the authoritative source for WxCC task
+  API contracts.
+- Use the hook-to-socket specification as the authoritative source for the WebSocket
+  connection and message-envelope structure. Review and follow it when extracting and
+  validating Webex Messaging and WxCC webhook payloads.
+- Review and follow each authoritative source before designing or implementing the
+  middleware.
 
-    Context and boundaries:
-    - Middleware is a translation/routing layer only (no agent desktop logic)
-    - All webhook-style deliveries that would normally target middleware directly MUST go through hook-to-socket relay first
-    - Middleware consumes forwarded events over socket connection (no public webhook intake endpoint required for runtime event processing)
-    - Webex Messaging and WxCC event deliveries both use relay path
+### Lab Integration Constraints
 
-    Authoritative compliance constraints:
-    - UI references (if any) must align with Momentum UI components
-    - External APIs must reference official Webex OpenAPI specs
-    - Zero known CVEs policy (npm audit --audit-level=moderate before merge)
-    - Structured JSON logging for all significant operations
-    - YAGNI: avoid speculative abstractions
+- In this lab, all Webex Messaging and WxCC webhook payloads pass through the hosted
+  hook-to-socket middleware.
+- The webhook payload is delivered inside the WebSocket message envelope.
 
-    Required spec sections (mandatory):
+### Conversation and Task Behavior
 
-    ## 1) API Contract Baseline (from BYOC.pdf)
-    - Service app auth and scopes used for WxCC APIs
-    - Create Task API contract and required fields
-    - Task Messages API contract and required fields
-    - Subscription/event model expectations
-    - Webhook authenticity/signature expectations
-    - Error classes and recovery expectations documented in PDF
+- Support text-only messaging for this lab.
+- When a WxCC task is closed, notify the Webex user that the chat has ended.
+- When an active WxCC task exists for the Webex conversation, append valid inbound
+  messages to that task.
+- When no active WxCC task exists for the Webex conversation, create a new task.
+- Each Webex conversation must remain associated with its active WxCC task so subsequent
+  inbound messages append to that task and outbound task events return to the same
+  conversation.
+- For task creation, map `Origin.id` to the Webex user `personEmail` and `Origin.name` to
+  the Webex user `displayName`.
 
-    ## 2) Relay Architecture Contract (non-PDF, mandatory)
-    Define the hook-to-socket protocol assumptions explicitly:
-    - Connection lifecycle: startup, heartbeat, reconnect, backoff, fail-fast gates
-    - Canonical relay envelope format for Webex-originated and WxCC-originated events
-    - Source identification rules and dispatch precedence
-    - Security boundaries: what is trusted from relay transport vs payload
+### Message Direction and Routing
 
-    ## 3) Authorization & Token Usage Matrix (non-PDF, mandatory)
-    For each external operation, specify:
-    - Credential type (bot token vs OAuth access token from refresh flow)
-    - Required scopes
-    - Required headers
-    - Refresh/expiry behavior
-    - Secret redaction requirements in logs/artifacts
+- Evaluate WxCC task lifecycle event direction using `data.direction`.
+- Evaluate WxCC task-message event direction using `data.messageDirection`.
+- If Webex and WxCC events share a webhook path, explicitly classify the event source and
+  direction before processing.
+- Only inbound traffic may create or append tasks or trigger Webex message ingestion.
+- Route outbound WxCC messages to the Webex conversation using the Messages API and do not
+  echo them back to the WxCC task.
+- Webex messages originating from `WXCC_BUSINESS_ADDRESS` MUST be ignored and MUST NOT
+  create or append a WxCC task.
 
-    ## 4) Session Correlation & State Model (non-PDF, mandatory)
-    - Webex room/person/message correlation to WxCC task/conversation/contact identifiers
-    - Session lifecycle states and transitions
-    - Session close/eviction rules
-    - Behavior for late, orphaned, and out-of-order events
+### Validation and Idempotency
 
-    ## 5) Deduplication & Idempotency Model (non-PDF, mandatory)
-    - Webex event dedup key strategy
-    - WxCC event dedup key strategy
-    - Retention window/capacity and eviction approach
-    - Idempotent subscription management requirements
+- Reject empty, non-text, malformed, or unsupported payloads before creating or appending
+  a WxCC task, and record the rejection for troubleshooting.
+- Handle duplicate or replayed Webex and WxCC webhook events idempotently.
+- A repeated inbound Webex event MUST NOT create a duplicate WxCC task or append the same
+  message more than once.
+- A repeated inbound WxCC task-message event MUST NOT send a duplicate Webex message.
+- Idempotency MUST use stable identifiers from the authoritative webhook payloads and MUST
+  remain effective for the lifetime of the running process.
 
-    ## 6) Startup Preflight & Misconfiguration Gates (non-PDF, mandatory)
-    Specify startup checks that must pass before accepting traffic:
-    - Relay reachability and required stream availability
-    - Required env vars and auth dependencies
-    - API readiness checks (including channel/access validation)
-    - Configuration attestation rules when delivery targets cannot be auto-verified via official API
+### API Contracts and Deviations
 
-    ## 7) Observability & Operations (non-PDF, mandatory)
-    - Structured JSON log schema with operation, outcome, correlation IDs, source, identifiers, error context
-    - Redaction rules (Authorization and secret-bearing fields)
+- Define and validate all external API request and response contracts against their
+  authoritative specifications before implementation.
+- Treat published contracts as authoritative and do not invent local request/response
+  payloads, simplified DTOs, or undocumented transformations.
+- The WxCC task-creation API is expected to return `202 Accepted` in the lab environment
+  instead of the documented `201 Created` response. Treat this as an approved
+  implementation deviation only when recorded in `deviations.md`, and continue validating
+  the response body against the authoritative schema.
+
+### Authentication and Configuration
+
+- The Webex bot account must authenticate using a static bot token.
+- The WxCC service account must authenticate using the refresh-token workflow.
+- Load configuration from `.env` and validate required values before processing messages.
+- Provide a service-organized `.env.example` with required variable templates and root URLs
+  restricted to scheme plus top-level domain.
+- Credentials, tokens, secrets, and sensitive personal data must be redacted from logs,
+  tests, documentation examples, build artifacts, and other project artifacts.
+
+### Observability
+
+- Every API call, task transition, routing decision, validation rejection, and failure must
+  produce a structured JSON log entry containing a timestamp, operation name, outcome,
+  relevant identifiers, and error context. Silent failures are not acceptable.
+
+---
+
+
+
+[Download this file](assets/BYOC.pdf){:download="BYOC.pdf"}
+
+[Download this spec for the Webhook to WebSocket middleware utilization](assets/hook-to-socket-spec.txt){: download="hook-to-socket-spec.md"}
+
+
+
+
+??? code
+    ```
+    /speckit-specify
+    BYOC middleware that connects Webex Messaging (bot account) to Webex Contact Center.
+    Use the attached BYOC2.PDF as the primary source for business behavior.
+    New messages will create a task in the Webex Contact Center.
+    If a task is already open, the message will be appended to the task.
+    If the task is closed, a message should be delivered to the webex user letting them know that the chat has ended.
+    If the user sends another message after the task has closed, a new task should be created.
+    For task creation, The Origin id of the task should be mapped to the webex personEmail and the Origin name should be mapped to the webex user's displayName
+    For this lab, all webhooks from Webex Messaging (bot account) and Webex Contact Center will be redirected through the hook-to-socket middleware which is hosted separately.  Use the attached hook-to-socket.md file for the specification.
+    There will be more than one service running concurrently, so the task webhooks should be validated against active tasks.
+    Authorization for the Service Account should use the refresh token workflow.
     ```
 
+
+
 #### Review the Spec and Checklist (the path needs updated AND instructions need to be expanded)
-> Navigate to .specify/memory/constitution.md  
-> Open the file in preview mode  
+> Navigate to the **specs** directory
+> Review the spec.md file  
+> Note that there are:  
+    - user stories    
 > ---
 
 #### Add Clarification Using AI skill

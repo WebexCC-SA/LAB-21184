@@ -1,0 +1,3 @@
+/speckit.tasks
+
+/speckit.analyze

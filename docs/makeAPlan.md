@@ -94,7 +94,6 @@ Here you will define **HOW** to implement the feature from a technical point of 
     /speckit-plan
 
     - Use node 26
-    - development and testing will be done in a windows environment
 
     - Identify every authoritative document listed in the specification and map it to the
     implementation area it governs.

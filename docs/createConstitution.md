@@ -38,4 +38,16 @@
 #### Allow the Agent to create the Constitution and then review the output.
 > Navigate to .specify/memory/constitution.md  
 > Open the file in preview mode
+>
+> ---
 
+#### Commit the changes to your repository
+This will allow you to easily identify the changes which are made as you progress through the project as well as let you revert to a previous point in the code history.  
+> Click the Source Control button in the left menu ![alt text](assets/sourceControl.png)  
+> Click the `+` next to Changes to add all changes to the commit  
+> Add a commit message: <copy>Constitution Created</copy>   
+> Click the Commit button  
+> Return to the Explorer  
+> ??? gif w50 "Show Me"
+     ![alt text](assets/Commit.gif)
+> ---

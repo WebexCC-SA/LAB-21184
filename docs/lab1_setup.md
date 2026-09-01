@@ -27,6 +27,6 @@ Enter command: <copy>cd Downloads</copy>
 #### Initialize a Git repository
 > Click the Source Control Icon in the Left Pane ![alt text](assets/sourceControl.png)  
 > Click the Initialize Repository Button
-> ??? note w50 "Show Me"
+> ??? gif w50 "Show Me"
 >     ![alt text](assets/gitInit.gif)
 > ---

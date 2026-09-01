@@ -4,6 +4,14 @@ In this step you will be defining **WHAT** the tool does, but not how the featur
 
 ## Understanding the specification.
 
+### External Documents which will be referenced in the specification.
+
+> [bring-your-own-custom-messaging-channel](https://developer.webex.com/webex-contact-center/docs/bring-your-own-custom-messaging-channel){:target="_blank"}  
+> [webhooks-cc](https://developer.webex.com/webex-contact-center/docs/api/guides/webhooks-cc){:target="_blank"}  
+> [Webex webhooks](https://developer.webex.com/messaging/docs/api/guides/webhooks){:target="_blank"}  
+
+
+
 BYOC middleware that connects Webex Messaging (bot account) to Webex Contact Center.
 
 ### Authoritative Documents
@@ -38,8 +46,7 @@ BYOC middleware that connects Webex Messaging (bot account) to Webex Contact Cen
 - Each Webex conversation must remain associated with its active WxCC task so subsequent
   inbound messages append to that task and outbound task events return to the same
   conversation.
-- For task creation, map `Origin.id` to the Webex user `personEmail` and `Origin.name` to
-  the Webex user `displayName`.
+- For task creation, map `Origin.id` to the Webex user `personEmail`. 
 
 ### Message Direction and Routing
 
@@ -70,7 +77,7 @@ BYOC middleware that connects Webex Messaging (bot account) to Webex Contact Cen
   authoritative specifications before implementation.
 - Treat published contracts as authoritative and do not invent local request/response
   payloads, simplified DTOs, or undocumented transformations.
-- The WxCC task-creation API is expected to return `202 Accepted` in the lab environment
+- The WxCC task-creation API MUST use v2/tasks and is expected to return `202 Accepted` in the lab environment
   instead of the documented `201 Created` response. Treat this as an approved
   implementation deviation only when recorded in `deviations.md`, and continue validating
   the response body against the authoritative schema.
@@ -107,11 +114,15 @@ BYOC middleware that connects Webex Messaging (bot account) to Webex Contact Cen
 > [Download these documentation files](assets/labFiles.zip){:download="docs.zip"}  
 > Create a new folder named `docs` in your project folder  
 > Unzip the downloaded file and place copy the files into your new docs folder  
+> ??? gif w50 "Show Me"
+    ![alt text](assets/docs.gif)  
+> ---
 
 
-### 
- 
-??? code
+### Add the helper files and the prompt to the Agent conversation
+> Drag the files in the `docs folder into the Agent Prompt  
+> Copy the text from the dropdown below into the Agent Prompt   
+> ??? code
     ```
     /speckit-specify
 
@@ -143,8 +154,7 @@ BYOC middleware that connects Webex Messaging (bot account) to Webex Contact Cen
     - Each Webex conversation must remain associated with its active WxCC task so subsequent
     inbound messages append to that task and outbound task events return to the same
     conversation.
-    - For task creation, map `Origin.id` to the Webex user `personEmail` and `Origin.name` to
-    the Webex user `displayName`.
+    - For task creation, map `Origin.id` to the Webex user `personEmail`.
 
     - Evaluate WxCC task lifecycle event direction using `data.direction`.
     - Evaluate WxCC task-message event direction using `data.messageDirection`.
@@ -169,7 +179,7 @@ BYOC middleware that connects Webex Messaging (bot account) to Webex Contact Cen
     authoritative specifications before implementation.
     - Treat published contracts as authoritative and do not invent local request/response
     payloads, simplified DTOs, or undocumented transformations.
-    - The WxCC task-creation API is expected to return `202 Accepted` in the lab environment
+    - The WxCC task-creation API MUST use v2/tasks and is expected to return `202 Accepted` in the lab environment
     instead of the documented `201 Created` response. Treat this as an approved
     implementation deviation only when recorded in `deviations.md`, and continue validating
     the response body against the authoritative schema.
@@ -186,17 +196,26 @@ BYOC middleware that connects Webex Messaging (bot account) to Webex Contact Cen
     produce a structured JSON log entry containing a timestamp, operation name, outcome,
     relevant identifiers, and error context. Silent failures are not acceptable.
     ```
+> Press Enter to send the prompt
+>
+> ---
 
 
-
-#### Review the Spec and Checklist (the path needs updated AND instructions need to be expanded)
+#### Review the Spec and Checklist 
 > Navigate to the **specs** directory
 > Review the spec.md file  
 > Note that there are:  
-    - user stories    
+>> User Stories  
+>> Explanations  
+>> Tests
+>> Acceptance Scenarios  
+>> Functional Requirements  
+>> Success Criteria  
+>> Measurable Outcomes  
+>> Assumptions  
 > ---
 
-#### Add Clarification Using AI skill
+#### Are you sure that everything is correct or do you want to add some additional clarification?
 > Enter command: <copy>/speckit-clarify</copy>  
 > Answer any questions based on the specification explanation (If you have any questions ask the proctors)  
 > --- 

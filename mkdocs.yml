@@ -88,7 +88,7 @@ nav:
   - Home: index.md
   - Welcome:
     - Let's Get Started: welcome.md
-    - Overview: overview.md
+    # - Overview: overview.md
   - Labs:      
       # - Lab 1 - Getting Started: lab1_getting_started.md
       - Lab 1 Bring Your Own Channel (BYOC): 

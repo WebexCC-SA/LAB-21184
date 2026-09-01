@@ -1,3 +1,6 @@
-/speckit.tasks
+## Break out the plan into tasks
 
-/speckit.analyze
+/speckit-tasks
+
+## Analyze the tasks created against the Constitution, Spec, and Plan  
+/speckit-analyze

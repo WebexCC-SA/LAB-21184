@@ -29,4 +29,6 @@ Enter command: <copy>cd Downloads</copy>
 > Click the Initialize Repository Button
 > ??? gif w50 "Show Me"
 >     ![alt text](assets/gitInit.gif)
+> ⚠️ Do **NOT** commit at this point!  
+> 
 > ---

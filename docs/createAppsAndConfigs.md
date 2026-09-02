@@ -65,14 +65,16 @@ For this lab you will need to create a **Service App** and a **Webex Bot** in th
 > Click **Custom Channels**  
 > Click the **Create a custom channel** button  
 >> Name: <copy></copy>  
-Channel Type: <copy></copy>  
-Logo:  
+Channel Type: Custom messaging   
+Logo: click select from library and search for <copy>webex-helix-regular</copy>  
+Max message characters: <copy>5400</copy>  
+Allow file attachments: False  
 Click Create
 >
 > ---
 
 #### Create a New Asset
-> In the left pane under Contact Center find the section labeled Digital setting  
+> In the left pane under Contact Center find the section labeled Digital Setting  
 > Click **Assets**  
 > Select **Custom messaging** in the ribbon options  
 > Click the **Create an asset** button
@@ -90,3 +92,12 @@ Click Create
 
 
 #### Create a New Entry Point 
+> In the left pane under Contact Center find the section labeled Customer Experience  
+> Click Entry Points  
+> Click Create an Entry Point  
+>> Name: <copy><w class="pod">podName</w></copy>  
+Channel type: Custom messaging  
+Channel Asset: <w class="pod">podName</w>  
+Service level threshold: <copy>3600</copy>  
+> ---
+

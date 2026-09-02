@@ -31,6 +31,7 @@
     4. **POC Simplicity (YAGNI)**: The middleware is a proof of concept. Complexity must be justified by a concrete current requirement. No premature abstraction, plugin architectures, or speculative generalization.
 
     5. **Secure Auth & Secret Hygiene**: Authentication MUST use official Webex OAuth/token guidance, and credentials/secrets MUST be injected through environment-based configuration with strict redaction in logs and artifacts.
+   
     6. **Cross-Platform File Paths**: The service MUST run on both Windows and Linux/macOS. Never hardcode slash characters (/ or \) in file paths or script checks; always use the built-in path and url modules.
 
     Include development workflow requirements, governance procedures, and version management. Use semantic versioning for amendments.

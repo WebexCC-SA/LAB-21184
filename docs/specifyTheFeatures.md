@@ -77,7 +77,8 @@ BYOC middleware that connects Webex Messaging (bot account) to Webex Contact Cen
   authoritative specifications before implementation.
 - Treat published contracts as authoritative and do not invent local request/response
   payloads, simplified DTOs, or undocumented transformations.
-- The WxCC task-creation API MUST use v2/tasks and is expected to return `202 Accepted` in the lab environment
+- All WxCC custom messaging task operations MUST use v2/tasks API.
+- The WxCC task-creation API and is expected to return `202 Accepted` in the lab environment
   instead of the documented `201 Created` response. Treat this as an approved
   implementation deviation only when recorded in `deviations.md`, and continue validating
   the response body against the authoritative schema.
@@ -179,7 +180,8 @@ BYOC middleware that connects Webex Messaging (bot account) to Webex Contact Cen
     authoritative specifications before implementation.
     - Treat published contracts as authoritative and do not invent local request/response
     payloads, simplified DTOs, or undocumented transformations.
-    - The WxCC task-creation API MUST use v2/tasks and is expected to return `202 Accepted` in the lab environment
+    - All WxCC custom messaging task operations MUST use v2/tasks API.
+    - The WxCC task-creation API is expected to return `202 Accepted` in the lab environment
     instead of the documented `201 Created` response. Treat this as an approved
     implementation deviation only when recorded in `deviations.md`, and continue validating
     the response body against the authoritative schema.
@@ -215,7 +217,31 @@ BYOC middleware that connects Webex Messaging (bot account) to Webex Contact Cen
 >> Assumptions  
 > ---
 
+#### Commit the changes to your repository
+This will allow you to easily identify the changes which are made as you progress through the project as well as let you revert to a previous point in the code history.  
+> Click the Source Control button in the left menu ![alt text](assets/sourceControl.png)  
+> Click the `+` next to Changes to add all changes to the commit  
+> Add a commit message: <copy>Spec Created</copy>   
+> Click the Commit button  
+> Return to the Explorer  
+> ??? gif w50 "Show Me"
+     ![alt text](assets/Commit.gif)
+> ---
+
+
 #### Are you sure that everything is correct or do you want to add some additional clarification?
 > Enter command: <copy>/speckit-clarify</copy>  
 > Answer any questions based on the specification explanation (If you have any questions ask the proctors)  
+> 
 > --- 
+
+#### If changes were made commit the changes to your repository
+This will allow you to easily identify the changes which are made as you progress through the project as well as let you revert to a previous point in the code history.  
+> Click the Source Control button in the left menu ![alt text](assets/sourceControl.png)  
+> Click the `+` next to Changes to add all changes to the commit  
+> Add a commit message: <copy>Spec Clarified</copy>   
+> Click the Commit button  
+> Return to the Explorer  
+> ??? gif w50 "Show Me"
+     ![alt text](assets/Commit.gif)
+> ---

@@ -8,7 +8,7 @@ WxCC Business Address:
 WxCC API Base URL: <copy>https://api.wxcc-us1.cisco.com</copy>   
 WxCC Client ID: <copy><w class=clientID></w></copy>  
 WxCC Client Secret: <copy><w class=clientSecret></w></copy>  
-WxCC Refresh Token: <copy><w class=saIrtd></w></copy>  
+WxCC Refresh Token: <copy><w class=rt></w></copy>  
 WxCC Token URL: <copy>https://webexapis.com/v1/access_token</copy>  
 
 Webex Channel Name: <copy><w class=podInfo></w></copy>  

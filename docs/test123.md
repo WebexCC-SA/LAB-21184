@@ -72,7 +72,7 @@ button:hover{
     <input type="text" id="at" name="at" onChange="setValues()"><br>
     
     <label for="rt">Service App Refresh Token:</label>
-    <input type="text" id="rt" name="saIrtd" onChange="setValues()"><br>
+    <input type="text" id="rt" name="rt" onChange="setValues()"><br>
     
     <!-- <label for="saId">Service App ID:</label>
     <input type="text" id="saId" name="saId" onChange="setValues()"><br> -->

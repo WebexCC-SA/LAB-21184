@@ -1,4 +1,5 @@
-function loadem() {
+document$.subscribe(function(){loadem()})
+    function loadem() {
     Object.keys(sessionStorage).forEach(key => { Array.from(document.getElementsByClassName(key)).forEach((index) => { index.innerHTML = sessionStorage.getItem(key) }) });
 
     [].forEach.call(document.getElementsByTagName("copy"), function (el) {
@@ -7,9 +8,11 @@ function loadem() {
             if (event.target.tagName == "W") { navigator.clipboard.writeText(event.target.parentNode.innerText) }
         })
     })
-} loadem()
+    document.querySelector("#info").querySelectorAll("input").forEach((input) => { input.value = sessionStorage.getItem(input.name) });
+}; loadem()
 function setValues() {
     document.querySelector("#info").querySelectorAll("input").forEach((input) => { sessionStorage.setItem(input.name, input.value) });
-    event.preventDefault()
+    // event.preventDefault()
+    Event.preventDefault()
     loadem()
 }

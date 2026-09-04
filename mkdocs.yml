@@ -78,7 +78,8 @@ markdown_extensions:
   - pymdownx.highlight
   - pymdownx.tabbed:
       alternate_style: true
-      
+  - pymdownx.snippets:
+      base_path: docs
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
@@ -99,6 +100,7 @@ nav:
         - Specify The Features: specifyTheFeatures.md
         - Making a Plan: makeAPlan.md
         - Create Tasks: createTasks.md
+        - Adding Configuration Information: envSettings.md
 
       - Conclusion: conclusion.md
   # - Topologies: topologies.md

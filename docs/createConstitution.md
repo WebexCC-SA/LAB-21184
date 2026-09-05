@@ -1,18 +1,23 @@
 
+A constitution is the fundamental set of laws and core principles by which a country, state, or organization is governed.  In Spec Driven Development it is the foundation document which contains key principles to guide your AI agents and rules which **MUST** be followed by your AI agents through every stage of development.
+ 
 
 
-
-#### The Constitution should reflect the following criteria:
+### Your Constitution will reflect the following criteria:
 
 > An API first Specification - Use only known and documented APIs   
 > Zero Known Vulnerabilities - Do not introduce vulnerabilities for the sake of convenience   
 > Structured Observability by Default - Every action will produce a log   
 > POC Simplicity (YAGNI) - You Aren't Gonna Need It - Don't add fluff and unnecessary features   
-> Cross-Platform File Paths: The service MUST run on both Windows and Linux/macOS. Never hardcode slash characters (/ or \\) in file paths or script checks; always use the built-in path and url modules.  
+> Cross-Platform File Paths: The service MUST run on both Windows and Linux/macOS.
 > Secure Auth & Secret Hygiene    
 > ---
 
-??? code "Copy this prompt into the AI Agent interaction"
+#### Launch the Agent Chat UI
+> In the VS Code Menu Bar locate the button to "Open in Agents"  
+> ![Open in Agents](assets/openInAgents.gif)  
+
+> ??? code "Copy this prompt into the AI Agent interaction"
     ```md
     /speckit-constitution
 
@@ -40,7 +45,12 @@
 
 #### Allow the Agent to create the Constitution and then review the output.
 > Navigate to .specify/memory/constitution.md  
-> Open the file in preview mode
+> Open the file in preview mode by right clicking on the file and selecting "Open Preview" from the menu  
+> Review:  
+>> Core Principles  
+Additional Constraints  
+Development Workflow & Quality Gates  
+Governance
 >
 > ---
 

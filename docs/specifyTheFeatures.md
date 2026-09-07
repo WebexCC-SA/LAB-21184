@@ -1,6 +1,8 @@
 
---8<-- "test123.md"
-In this step you will be defining **WHAT** the tool does, but not how the feature will be implemented.  
+<!-- --8<-- "test123.md" -->
+In this step you will be defining **WHAT** the feature does, but not how the feature will be implemented.  This does not mean that it will not contain technical information because a lot of what we want to build has very technical requirements, like API details.    
+
+
 
 ## Understanding the specification.
 
@@ -121,7 +123,7 @@ BYOC middleware that connects Webex Messaging (bot account) to Webex Contact Cen
 
 
 ### Add the helper files and the prompt to the Agent conversation
-> Drag the files in the `docs folder into the Agent Prompt  
+> Drag the files in the `docs` folder into the Agent Prompt  
 > Copy the text from the dropdown below into the Agent Prompt   
 > ??? code
     ```

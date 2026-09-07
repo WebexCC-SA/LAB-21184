@@ -1,9 +1,9 @@
 
 
-Here you will define **HOW** to implement the feature from a technical point of view.
+Here you will define **HOW** to implement the feature from a technical point of view.  This will include information about the tech stack you want to use, how you want to be able to monitor the features, how you want your code to be organized, testing, and anything else specific to the code. 
 
 
-## Let's make a plan
+## Understanding what will be included in your plan
 
 ### Authoritative-Document Workflow
 
@@ -89,7 +89,13 @@ Here you will define **HOW** to implement the feature from a technical point of 
 - Use the manual workflow for live confirmation of bridge connectivity, task creation,
   appends, outbound delivery, closure handling, and loop prevention.
 
-??? code
+---
+
+##  Let's make the plan
+
+### Add the prompt to the Agent conversation  
+> Copy the text from the dropdown below into the Agent Prompt  
+> ??? code
     ```
     /speckit-plan
 
@@ -165,9 +171,33 @@ Here you will define **HOW** to implement the feature from a technical point of 
     - Use the manual workflow for live confirmation of bridge connectivity, task creation,
     appends, outbound delivery, closure handling, and loop prevention.
     ```
-#### Review your plan
+  > 
+  > Press Enter to send the prompt  
+  > 
+  > ---
+
+
+#### Review the artifacts created for your plan  
+> Plan  
+> > What Language/Version is being used in the plan?  
 > 
+> Contracts  
+>> You may have separate files for each API contact or a monolithic contract which describes all of the API contracts.  
+
+>
+> Data Model  
+>> You should see Rules, Field Mapping, etc.  
 > 
+> Research  
+>> This will explain why specific choices were made.  
+> 
+> Deviations  
+>> This will mention deviations from the specifications in the API documentation based on the Spec.  
+> 
+> Quickstart  
+>> This will contain setup instructions and manual testing for once the feature has been implemented.  
+> 
+
 > ---
 
 #### Commit the changes to your repository

@@ -1,0 +1,1819 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Using AI and Webex APIs to Develop Custom Tools and Functionality in Webex Contact Center">
+      
+      
+        <meta name="author" content="Kevin Simpson, Barry McLellan">
+      
+      
+      
+        <link rel="prev" href="../specifyTheFeatures/">
+      
+      
+        <link rel="next" href="../createTasks/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../template_assets/webex75.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Making a Plan - LAB-21184: Using AI and Webex APIs to Develop Custom Tools and Functionality in Webex Contact Center</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#understanding-what-will-be-included-in-your-plan" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="LAB-21184: Using AI and Webex APIs to Develop Custom Tools and Functionality in Webex Contact Center" class="md-header__button md-logo" aria-label="LAB-21184: Using AI and Webex APIs to Develop Custom Tools and Functionality in Webex Contact Center" data-md-component="logo">
+      
+  <img src="../template_assets/webexLogo91.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LAB-21184: Using AI and Webex APIs to Develop Custom Tools and Functionality in Webex Contact Center
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Making a Plan
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo" aria-label="Switch to dark mode" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="indigo" aria-label="Switch to light mode" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../welcome/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Welcome
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../lab1_overview/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Labs
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../toolsAndReferences/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Tools And References
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../howToUse/initialSetup/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  How to use this guide
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="LAB-21184: Using AI and Webex APIs to Develop Custom Tools and Functionality in Webex Contact Center" class="md-nav__button md-logo" aria-label="LAB-21184: Using AI and Webex APIs to Develop Custom Tools and Functionality in Webex Contact Center" data-md-component="logo">
+      
+  <img src="../template_assets/webexLogo91.png" alt="logo">
+
+    </a>
+    LAB-21184: Using AI and Webex APIs to Develop Custom Tools and Functionality in Webex Contact Center
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Welcome
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../welcome/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Let's Get Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Labs
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Labs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 1 Bring Your Own Channel (BYOC)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Lab 1 Bring Your Own Channel (BYOC)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab1_overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../createAppsAndConfigs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Creating the Required Configurations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab1_setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Setting up the Environment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../createConstitution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Create Your Constitution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../specifyTheFeatures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specify The Features
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Making a Plan
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Making a Plan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#understanding-what-will-be-included-in-your-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Understanding what will be included in your plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Understanding what will be included in your plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authoritative-document-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authoritative-Document Workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bridge-and-event-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bridge and Event Handling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#correlation-and-idempotency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Correlation and Idempotency
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-validation-and-deviations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Validation and Deviations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#observability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Observability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration-and-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration and Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing-and-validation-evidence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing and Validation Evidence
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lets-make-the-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Let's make the plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Let's make the plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-the-prompt-to-the-agent-conversation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add the prompt to the Agent conversation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Add the prompt to the Agent conversation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#review-the-artifacts-created-for-your-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Review the artifacts created for your plan
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commit-the-changes-to-your-repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Commit the changes to your repository
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../createTasks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Create Tasks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../envSettings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adding Configuration Information
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../conclusion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conclusion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../toolsAndReferences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools And References
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5">
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How to use this guide
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    How to use this guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1">
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Setting up and using the tool
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Setting up and using the tool
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../howToUse/initialSetup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Initial Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../howToUse/postInitial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Using the tool after the initial setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../howToUse/syncChanges/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Publishing your changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2">
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Styling and Advanced Features
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Styling and Advanced Features
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../howToUse/references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Markdown and Other References
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../howToUse/customFeatures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custom Features
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../howToUse/admonition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custom Admonitions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Making a Plan</h1>
+
+<p>Here you will define <strong>HOW</strong> to implement the feature from a technical point of view.  This will include information about the tech stack you want to use, how you want to be able to monitor the features, how you want your code to be organized, testing, and anything else specific to the code. </p>
+<h2 id="understanding-what-will-be-included-in-your-plan">Understanding what will be included in your plan</h2>
+<h3 id="authoritative-document-workflow">Authoritative-Document Workflow</h3>
+<ul>
+<li>Identify every authoritative document listed in the specification and map it to the
+  implementation area it governs.</li>
+<li>Review and follow each authoritative document before designing the related integration.</li>
+<li>Extract the relevant endpoint URLs, methods, request bodies, response bodies, event
+  envelopes, payload fields, and status codes into contract documentation.</li>
+<li>Record the exact source links and resolve conflicts between documents before coding.</li>
+<li>Record any approved deviation from an authoritative source in <code>deviations.md</code>.</li>
+</ul>
+<h3 id="bridge-and-event-handling">Bridge and Event Handling</h3>
+<ul>
+<li>Treat the hosted hook-to-socket middleware as an external integration boundary; do not
+  design or implement the bridge itself.</li>
+<li>Design a boundary component that extracts the embedded Webex or WxCC webhook payload
+  from the WebSocket message envelope.</li>
+<li>Validate the bridge envelope and embedded webhook payload before routing.</li>
+<li>Classify the event source and event type before applying direction or lifecycle logic.</li>
+<li>Use the hook-to-socket specification as the authoritative source for connection and
+  message-envelope details.</li>
+</ul>
+<h3 id="correlation-and-idempotency">Correlation and Idempotency</h3>
+<ul>
+<li>Design correlation so the WxCC task ID returned by task creation is stored with the
+  corresponding Webex conversation.</li>
+<li>Support lookup in both directions: Webex conversation to WxCC task for inbound appends,
+  and WxCC task to Webex conversation for outbound events.</li>
+<li>Define stable idempotency keys for Webex messages, WxCC events, and bridge deliveries.</li>
+<li>Ensure repeated events cannot create duplicate tasks, append duplicate messages, or send
+  duplicate outbound messages during the lifetime of the running process.</li>
+</ul>
+<h3 id="api-validation-and-deviations">API Validation and Deviations</h3>
+<ul>
+<li>Design automated contract and HTTP-boundary tests using production-shaped fixtures or
+  mocks for exact URLs, methods, headers, request bodies, response bodies, and documented
+  success statuses.</li>
+<li>Validate actual request and response payloads against the authoritative OpenAPI schemas.</li>
+<li>Do not invent local request/response DTOs or silently transform payloads outside the
+  published contract.</li>
+<li>Support the approved <code>202 Accepted</code> task-creation response only when it is recorded in
+  <code>deviations.md</code>, while continuing to validate the response body against the authoritative
+  schema.</li>
+</ul>
+<h3 id="observability">Observability</h3>
+<ul>
+<li>Design structured JSON logging for every API call, task transition, validation rejection,
+  routing decision, and failure.</li>
+<li>Include a timestamp, operation, outcome, relevant identifiers, and error context in each
+  record, with secrets and sensitive values redacted.</li>
+<li>Use simple fixed log levels: <code>info</code> for successful operations and state transitions,
+  <code>warn</code> for rejected, duplicate, skipped, or recoverable conditions, and <code>error</code> for
+  failed operations and recovery-required events.</li>
+<li>Record failures with enough correlation data to support explicit recovery and
+  troubleshooting.</li>
+<li>Do not add configurable logging infrastructure or aggregation systems unless required by
+  the current lab.</li>
+</ul>
+<h3 id="configuration-and-security">Configuration and Security</h3>
+<ul>
+<li>Design a configuration module that loads <code>.env</code> and validates required values before
+  message processing begins.</li>
+<li>Organize <code>.env.example</code> variables by service and document whether each URL is a service
+  root or a complete endpoint.</li>
+<li>Require service root URL variables to contain only the scheme and top-level domain.</li>
+<li>Allow endpoint-specific variables to include their required path, such as the WxCC token
+  URL.</li>
+<li>Do not append paths in code to variables that are already defined as complete endpoint
+  URLs.</li>
+<li>Redact credentials, tokens, secrets, and sensitive personal data from logs, tests,
+  documentation examples, build artifacts, and other committed or observable artifacts.</li>
+</ul>
+<h3 id="testing-and-validation-evidence">Testing and Validation Evidence</h3>
+<ul>
+<li>Add automated tests for each changed behavior, using production-shaped Webex, WxCC, and
+  WebSocket bridge fixtures.</li>
+<li>Include fixtures for Webex message notifications, WxCC lifecycle events, WxCC task-message
+  events, task responses, failure responses, and the approved <code>202</code> response.</li>
+<li>Document a manual integration-validation workflow for the hosted bridge and external
+  services, including required environment variables, event triggers, expected outcomes,
+  and structured-log evidence.</li>
+<li>Do not assume automated tests can access live services or trigger external workflows.</li>
+<li>Use the manual workflow for live confirmation of bridge connectivity, task creation,
+  appends, outbound delivery, closure handling, and loop prevention.</li>
+</ul>
+<hr>
+<h2 id="lets-make-the-plan">Let's make the plan</h2>
+<h3 id="add-the-prompt-to-the-agent-conversation">Add the prompt to the Agent conversation</h3>
+<blockquote>
+<p>Copy the text from the dropdown below into the Agent Prompt  </p>
+<details class="code">
+<summary>Code</summary>
+<div class="highlight"><pre><span></span><code>/speckit-plan
+
+- Use node 26
+
+- Identify every authoritative document listed in the specification and map it to the
+implementation area it governs.
+- Review and follow each authoritative document before designing the related integration.
+- Extract the relevant endpoint URLs, methods, request bodies, response bodies, event
+envelopes, payload fields, and status codes into contract documentation.
+- Record the exact source links and resolve conflicts between documents before coding.
+- Record any approved deviation from an authoritative source in `deviations.md`.
+
+- Treat the hosted hook-to-socket middleware as an external integration boundary; do not
+design or implement the bridge itself.
+- Design a boundary component that extracts the embedded Webex or WxCC webhook payload
+from the WebSocket message envelope.
+- Validate the bridge envelope and embedded webhook payload before routing.
+- Classify the event source and event type before applying direction or lifecycle logic.
+- Use the hook-to-socket specification as the authoritative source for connection and
+message-envelope details.
+
+- Design correlation so the WxCC task ID returned by task creation is stored with the
+corresponding Webex conversation.
+- Support lookup in both directions: Webex conversation to WxCC task for inbound appends,
+and WxCC task to Webex conversation for outbound events.
+- Define stable idempotency keys for Webex messages, WxCC events, and bridge deliveries.
+- Ensure repeated events cannot create duplicate tasks, append duplicate messages, or send
+duplicate outbound messages during the lifetime of the running process.
+
+- Design automated contract and HTTP-boundary tests using production-shaped fixtures or
+mocks for exact URLs, methods, headers, request bodies, response bodies, and documented
+success statuses.
+- Validate actual request and response payloads against the authoritative OpenAPI schemas.
+- Do not invent local request/response DTOs or silently transform payloads outside the
+published contract.
+- Support the approved `202 Accepted` task-creation response only when it is recorded in
+`deviations.md`, while continuing to validate the response body against the authoritative
+schema.
+
+- Design structured JSON logging for every API call, task transition, validation rejection,
+routing decision, and failure.
+- Include a timestamp, operation, outcome, relevant identifiers, and error context in each
+record, with secrets and sensitive values redacted.
+- Use simple fixed log levels: `info` for successful operations and state transitions,
+`warn` for rejected, duplicate, skipped, or recoverable conditions, and `error` for
+failed operations and recovery-required events.
+- Record failures with enough correlation data to support explicit recovery and
+troubleshooting.
+- Do not add configurable logging infrastructure or aggregation systems unless required by
+the current lab.
+
+- Design a configuration module that loads `.env` and validates required values before
+message processing begins.
+- Organize `.env.example` variables by service and document whether each URL is a service
+root or a complete endpoint.
+- Require service root URL variables to contain only the scheme and top-level domain.
+- Allow endpoint-specific variables to include their required path, such as the WxCC token
+URL.
+- Do not append paths in code to variables that are already defined as complete endpoint
+URLs.
+- Redact credentials, tokens, secrets, and sensitive personal data from logs, tests,
+documentation examples, build artifacts, and other committed or observable artifacts.
+
+- Add automated tests for each changed behavior, using production-shaped Webex, WxCC, and
+WebSocket bridge fixtures.
+- Include fixtures for Webex message notifications, WxCC lifecycle events, WxCC task-message
+events, task responses, failure responses, and the approved `202` response.
+- Document a manual integration-validation workflow for the hosted bridge and external
+services, including required environment variables, event triggers, expected outcomes,
+and structured-log evidence.
+- Do not assume automated tests can access live services or trigger external workflows.
+- Use the manual workflow for live confirmation of bridge connectivity, task creation,
+appends, outbound delivery, closure handling, and loop prevention.
+</code></pre></div>
+</details>
+<p>Press Enter to send the prompt  </p>
+<hr>
+</blockquote>
+<h4 id="review-the-artifacts-created-for-your-plan">Review the artifacts created for your plan</h4>
+<blockquote>
+<p>Plan  </p>
+<blockquote>
+<p>What Language/Version is being used in the plan?  </p>
+</blockquote>
+<p>Contracts  </p>
+<blockquote>
+<p>You may have separate files for each API contact or a monolithic contract which describes all of the API contracts.  </p>
+</blockquote>
+<p>Data Model  </p>
+<blockquote>
+<p>You should see Rules, Field Mapping, etc.  </p>
+</blockquote>
+<p>Research  </p>
+<blockquote>
+<p>This will explain why specific choices were made.  </p>
+</blockquote>
+<p>Deviations  </p>
+<blockquote>
+<p>This will mention deviations from the specifications in the API documentation based on the Spec.  </p>
+</blockquote>
+<p>Quickstart  </p>
+<blockquote>
+<p>This will contain setup instructions and manual testing for once the feature has been implemented.<br>
+</p>
+</blockquote>
+<hr>
+</blockquote>
+<h4 id="commit-the-changes-to-your-repository">Commit the changes to your repository</h4>
+<p>This will allow you to easily identify the changes which are made as you progress through the project as well as let you revert to a previous point in the code history.  </p>
+<blockquote>
+<p>Click the Source Control button in the left menu <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/sourceControl.png" data-title="alt text" data-desc-position="top"><img alt="alt text" src="../assets/sourceControl.png"></a><br>
+Click the <code>+</code> next to Changes to add all changes to the commit<br>
+Add a commit message: <copy>Plan Created</copy> <br>
+Click the Commit button<br>
+Return to the Explorer  </p>
+<details class="gif w50">
+<summary>Show Me</summary>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/Commit.gif" data-title="alt text" data-desc-position="top"><img alt="alt text" src="../assets/Commit.gif"></a></p>
+</details>
+<hr>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden="">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer">
+        
+          
+          <a href="../specifyTheFeatures/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Specify The Features">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Specify The Features
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../createTasks/" class="md-footer__link md-footer__link--next" aria-label="Next: Create Tasks">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Create Tasks
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2026 Cisco
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.instant", "navigation.top", "navigation.footer", "search.suggest", "content.code.copy", "toc.integrate"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../template_assets/js/newLoad.js"></script>
+      
+        <script src="../template_assets/js/setInfo.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": false, "openEffect": "fade", "closeEffect": "fade", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

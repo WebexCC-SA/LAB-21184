@@ -95,7 +95,7 @@ Here you will define **HOW** to implement the feature from a technical point of 
 
 ### Add the prompt to the Agent conversation  
 > Copy the text from the dropdown below into the Agent Prompt  
-> ??? code
+> ??? ai "Prompt"
     ```
     /speckit-plan
 

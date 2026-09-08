@@ -125,7 +125,7 @@ BYOC middleware that connects Webex Messaging (bot account) to Webex Contact Cen
 ### Add the helper files and the prompt to the Agent conversation
 > Drag the files in the `docs` folder into the Agent Prompt  
 > Copy the text from the dropdown below into the Agent Prompt   
-> ??? code
+> ??? ai "Prompt"
     ```
     /speckit-specify
 

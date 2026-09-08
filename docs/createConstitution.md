@@ -16,8 +16,9 @@ A constitution is the fundamental set of laws and core principles by which a cou
 #### Launch the Agent Chat UI
 > In the VS Code Menu Bar locate the button to "Open in Agents"  
 > ![Open in Agents](assets/openInAgents.gif)  
+> Copy the text from the dropdown below into the Agent Prompt 
 
-> ??? code "Copy this prompt into the AI Agent interaction"
+> ??? ai "Prompt"
     ```md
     /speckit-constitution
 

@@ -10,3 +10,11 @@
 
 ### Barry This One!!
 > Enter the admin Password: <copy><w class="admin"></w></copy>
+
+
+!!! ai
+    this is text
+
+!!! note
+    this is text
+    

@@ -13,6 +13,6 @@ WxCC Token URL: <copy>https://webexapis.com/v1/access_token</copy>
 
 Webex Channel Name: <copy><w class=podInfo></w></copy>  
 
-Pair ID: <copy><w class=podInfo></w></copy>
+Pair ID: <copy><w class=podInfo></w></copy>  
 Bridge Base Web Socket URL: <copy>wss://hook-to-socket.onrender.com</copy>  
 Bridge Base HTTP URL: <copy>https://hook-to-socket.onrender.com</copy>  

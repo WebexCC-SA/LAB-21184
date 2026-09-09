@@ -20,7 +20,31 @@
 > 
 > ---
 
+## Create the connection in VS Code
+> Log into your GitHub account from VS Code by clicking on the Accounts avatar located near the bottom of the left menu bar.  
+> Select Manage Extension account Preferences.  
+> The command bar will open at the top of the window, select GitHub Repositories.  
+> Select Use New Account.  
+> Follow the steps to log into your github account.  
+> Copy the URL of your Repository from your browser.  
+> Type the following command in the command bar: `>Git:Add Remote`  
+> Paste the URL into the command bar.  
+> When prompted for the Remote Name, type: `origin`  
+> In Source Control Click the Publish Branch button  
+>
+> ---
 
+## Log Out of your GitHub Account 
+> Click the Accounts avatar menu  
+> Hover over your account  
+> Select `Sign Out`  
+>
+> ---
+
+
+<!-- ---
+
+---
 
 
 > <form id="info">
@@ -34,8 +58,8 @@
 
 ## Update Git settings on the lab PC
 > In the terminal of VS Code enter the following commands one at a time:  
-> <copy>git config user.email "<w class="ghEmail"><w/>""</copy>  
-> <copy>git config user.name "<w class="gh"><w/>""</copy>
+> <copy>git config user.email "<w class="ghEmail"></w>"</copy>  
+> <copy>git config user.name "<w class="gh"></w>"</copy>
 >
 > ---
 
@@ -44,4 +68,4 @@
 > <copy>git remote add origin https://github.com/<w class="gh">{githubAccount}</w>/Wx1-Web-Components.git</copy>   
 > <copy>git push -u origin main</copy>  
 >
-> ---
+> --- -->

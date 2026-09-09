@@ -1,5 +1,5 @@
 
-## Log into Your Personal Github Account  
+## Log Into Your Personal Github Account  
 > Navigate to [GitHub](https://github.com){target="_blank"}  
 > Create a new GitHub account if you do not already have one.  
 >
@@ -20,12 +20,15 @@
 > 
 > ---
 
-## Create the connection in VS Code
+## Create the Connection in VS Code
 > Log into your GitHub account from VS Code by clicking on the Accounts avatar located near the bottom of the left menu bar.  
 > Select Manage Extension account Preferences.  
 > The command bar will open at the top of the window, select GitHub Repositories.  
 > Select Use New Account.  
 > Follow the steps to log into your github account.  
+
+
+## Setup the Remote and Publish Your Code
 > Copy the URL of your Repository from your browser.  
 > Type the following command in the command bar: `>Git:Add Remote`  
 > Paste the URL into the command bar.  
@@ -34,7 +37,7 @@
 >
 > ---
 
-## Log Out of your GitHub Account 
+## Log Out of Your GitHub Account 
 > Click the Accounts avatar menu  
 > Hover over your account  
 > Select `Sign Out`  

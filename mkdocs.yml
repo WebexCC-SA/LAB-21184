@@ -89,6 +89,7 @@ nav:
   - Home: index.md
   - Welcome:
     - Let's Get Started: welcome.md
+    - Let's Prepare Your Lab Guide: prepareTheGuide.md
     # - Overview: overview.md
   - Labs:      
       # - Lab 1 - Getting Started: lab1_getting_started.md

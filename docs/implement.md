@@ -24,7 +24,7 @@ This will allow you to easily identify the changes which are made as you progres
 > You should now check your code for completeness.  
 > In the Agent Prompt enter the command: <copy>/speckit-converge</copy>  
 > The converge tool will review what was built against the plan and if any gaps are found it will create additional tasks.  
-> If any additional tasks are added by converge, run /pseckit-implement again and follow it up with /speckit-converge
+> If any additional tasks are added by converge, run /speckit-implement again and follow it up with /speckit-converge
 >
 > ---
 

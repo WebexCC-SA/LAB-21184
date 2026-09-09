@@ -1,6 +1,18 @@
+<script src="../assets/themHooks.js"></script>
+<style>    button{
+    border:solid 2px;
+    border-radius: 25px;
+    padding: 10px;
+}
+button:hover{
+    background-color:rgb(195, 193, 201);
+}
+</style>
 
 ### Configure webhook for incoming bot messages
-The webhook for Webex Contact Center Events has already been configured for you, but you will still need to subscribe to the Webex Messages `created` event from your bot account. 
+The webhook for Webex Contact Center Events has already been configured for you, but you will still need to subscribe to the Webex Messages `created` event from your bot account. To create the webhook, you will be using [this API](https://developer.webex.com/messaging/docs/api/v1/webhooks/create-a-webhook).  To make this step easier we have provided a button which will read the variables you have updated during the configuration steps to create and send the necessary API call.   
+
+<button onClick="ensureWebexWebhook()">Create Webhook</button>
 
 ---
 

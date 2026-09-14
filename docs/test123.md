@@ -13,7 +13,7 @@
 button:hover{
     background-color:rgb(195, 193, 201);
 }
-
+</style>
 <button id="modalOpen" popovertarget="my-dialog">Credential Store</button>
 <dialog id="my-dialog" popover>
 

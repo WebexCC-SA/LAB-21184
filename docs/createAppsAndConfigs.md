@@ -103,7 +103,7 @@ Click Create
 Channel type: Custom messaging  
 Channel Asset: <w class="podInfo"></w>  
 Service level threshold: <copy>3600</copy>  
-Custom messaging routing flow:  <w class="podInfo"></w>Flow **This needs to be updated because dashes are not allowed in names**  
+Custom messaging routing flow:  <w class="flow"></w>  
 Version Label: Latest  
 >
 > Click Create  

@@ -16,3 +16,38 @@ function setValues() {
     Event.preventDefault()
     loadem()
 }
+function setItem(key,value){
+    sessionStorage.setItem(key, value);
+    loadem();
+}
+function carl(pod){
+    let domain
+    let orgID
+    let podInfo
+
+    switch(true){
+        case (pod <= 15):
+            domain = "@lab-21184-a.wbx.ai";
+            orgID = "8c5a6aca-2e8a-4e93-b126-893b8378ee76"
+            break;
+        case (pod >=16 && pod <=30):
+            domain = "@lab-21184-b.wbx.ai";
+            orgID = "b9d6615a-7267-490c-a513-e1dc7cc2683b"
+            break;
+    
+        // case (pod >=21 && pod <=30):
+        //     domain = "@lab-21184-c.wbx.ai";
+        //     orgID = "13739921-6768-4c01-aa42-b5a602ef4c54"
+        //     break;
+    }
+    podInfo = "SPEC-"+pod
+    sessionStorage.setItem("podNumber", pod)
+    sessionStorage.setItem("podInfo", podInfo)
+    sessionStorage.setItem("admin", podInfo + "-admin" + domain)
+    sessionStorage.setItem("user", podInfo + "-user" + domain)
+    sessionStorage.setItem("orgID", orgID)
+    sessionStorage.setItem("flow", "SPEC_"+pod)
+    sessionStorage.setItem("Queue", podInfo+"-queue")
+    sessionStorage.setItem("Team", podInfo+"-team")
+    loadem()
+}

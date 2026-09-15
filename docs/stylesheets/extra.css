@@ -56,3 +56,10 @@ form#info button:hover{
 .w50{
     width: 50%;
 }
+copy{
+    color:var(--md-typeset-a-color);
+  
+}
+copy:hover{
+      color: #00bdeb;
+}

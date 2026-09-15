@@ -93,7 +93,7 @@ nav:
     # - Overview: overview.md
   - Labs:      
       # - Lab 1 - Getting Started: lab1_getting_started.md
-      - Lab 1 Bring Your Own Channel (BYOC): 
+      - Bring Your Own Channel (BYOC): 
         - Overview: lab1_overview.md
         - Creating the Required Configurations: createAppsAndConfigs.md
         - Setting up the Environment: lab1_setup.md

@@ -9,7 +9,7 @@ For this lab you will need to create a **Service App** and a **Webex Bot** in th
 <!-- Log into the **[Developer Portal](https://developer.webex.com/){:target="_blank"}**   -->
 
 #### Create a new **Service App**
-> Log into the **[Developer Portal](https://developer.webex.com/){:target="_blank"}** (If you are not already logged in)  
+> Log into the **[Developer Portal](https://developer.webex.com/){:target="_blank"}** **with your Admin Account** (If you are not already logged in)  
 > Click in the avatar menu in the upper left corner and select **My Webex Apps**  
 > Click **Create A New App**  
 > Click **Create a Service APP**  
@@ -18,11 +18,12 @@ For this lab you will need to create a **Service App** and a **Webex Bot** in th
 > Description: <copy>BYOC for <w class="podInfo"></w></copy>   
 > Contact Email: <copy><w class="admin"></w></copy>  
 > Select the scopes:  cjp:config, cjp:config_write, cjp:config_read, cjp:task_write, cjp:task_read  
+> (Use CTRL + F and search for `cjp:` to make finding the scopes easier)  
 > Click Add Service App  
 > Copy your **Client ID**, **Client Secret**, and **Service App ID** into the Credential Store
 >> ---
 > 
-> Log into the **[Collaboration Control Hub](https://admin.webex.com/){:target="_blank"}** (If you are not already logged in)  
+> Log into the **[Collaboration Control Hub](https://admin.webex.com/){:target="_blank"}** **with your Admin Account** (If you are not already logged in)  
 > Navigate to **Apps** in the left side pane and select **Service Apps** from the options in the top ribbon  
 > Select **Other service apps** in the sub ribbon  
 > In the search bar, paste in your **Service App ID**: <copy><w class="saId"></w></copy>
@@ -42,7 +43,7 @@ For this lab you will need to create a **Service App** and a **Webex Bot** in th
 > ---
 
 #### Create a new Webex Bot
-> Log into the **[Developer Portal](https://developer.webex.com/){:target="_blank"}** (If you are not already logged in)  
+> Log into the **[Developer Portal](https://developer.webex.com/){:target="_blank"}** **with your Admin Account** (If you are not already logged in)  
 > Click in the avatar menu in the upper left corner and select **My Webex Apps**  
 > Click **Create A New App**  
 > Click **Create a Bot**  
@@ -59,7 +60,7 @@ For this lab you will need to create a **Service App** and a **Webex Bot** in th
 
 !!! note
     For these next three steps
-    > Log into the **[Collaboration Control Hub](https://admin.webex.com/){:target="_blank"}** (If you are not already logged in)  
+    > Log into the **[Collaboration Control Hub](https://admin.webex.com/){:target="_blank"}** **with your Admin Account** (If you are not already logged in)  
     > Navigate to Contact Center in the left pane
 
 
@@ -92,8 +93,12 @@ Click Create
 >
 > ---
 
-#### Create a New Flow
-
+#### Configure Your Flow
+> In the left pane under Contact Center find the section labeled Customer Experience  
+> Click Flows  
+> Use the Search Box to locate <copy><w class="flow"></w></copy>  
+> Click on flow <w class="flow">  
+> 
 
 #### Create a New Entry Point 
 > In the left pane under Contact Center find the section labeled Customer Experience  

@@ -35,10 +35,14 @@ function carl(pod){
             orgID = "b9d6615a-7267-490c-a513-e1dc7cc2683b"
             break;
     
-        // case (pod >=21 && pod <=30):
-        //     domain = "@lab-21184-c.wbx.ai";
-        //     orgID = "13739921-6768-4c01-aa42-b5a602ef4c54"
-        //     break;
+        case (pod >=31 && pod <=45):
+            domain = "@lab-21184-c.wbx.ai";
+            orgID = "13739921-6768-4c01-aa42-b5a602ef4c54"
+            break;
+        case (pod >=46 && pod <=64):
+            domain = "@lab-21184-d.wbx.ai";
+            orgID = "1e09e8ff-3c5b-41b2-a133-a9ec3dde3c1f"
+            break;
     }
     podInfo = "SPEC-"+pod
     sessionStorage.setItem("podNumber", pod)

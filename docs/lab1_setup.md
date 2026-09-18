@@ -12,13 +12,13 @@ Enter command: <copy>cd Downloads</copy>
 > ---
 
 #### Create the Project
-> Enter command: <copy>specify init LAB_1</copy>  
+> Enter command: <copy>specify init LAB_1_<w class="flow"></w></copy>  
 > Select: copilot  
 > Select: ps (PowerShell)  
 > ---
 
 #### Navigate Into the New Folder and Open VS Code
-> Enter command: <copy>cd LAB_1</copy>     
+> Enter command: <copy>cd LAB_1_<w class="flow"></w></copy>     
 > Enter command: <copy>code .</copy>   
 >
 > ---

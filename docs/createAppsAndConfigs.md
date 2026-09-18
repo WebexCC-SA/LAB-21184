@@ -31,7 +31,7 @@ For this lab you will need to create a **Service App** and a **Webex Bot** in th
 > Toggle the Authorize switch on and click Save  
 >> ---  
 >
-> Return to the **Developer Portal**
+> Return to the **Developer Portal**  
 > Refresh the page  
 > In the **Org Authorizations** section of your **Service App**  
 >> Select your **Org** from the dropdown  
@@ -97,8 +97,23 @@ Click Create
 > In the left pane under Contact Center find the section labeled Customer Experience  
 > Click Flows  
 > Use the Search Box to locate <copy><w class="flow"></w></copy>  
-> Click on flow <w class="flow">  
-> 
+> Click on flow <w class="flow"></w>  
+> Select the Channel you created in the previous steps: <w class="podInfo"></w>  
+> Click the Apply channel button in the lower right corner  
+> Inside the **Flow Designer**:  
+>> Click the first **Send Custom Message** node and Select your Custom messaging channel and select: <copy><w class="podInfo"></w></copy>  
+>> Repeat the previous step for the other **Send Custom Message** node.  
+>> Click the Queue Contact Node and Select your queue: <copy><w class="Queue"></w></copy>  
+>> In the lower right corner, click the **Validation** switch  
+>> Click the **Publish FLow** button
+>> Add a Comment: <copy>Updating flow for lab config</copy>  
+>> Click the **Publish Flow** button  
+>
+> Close the **Flow Designer** tab
+>
+> ---
+
+
 
 #### Create a New Entry Point 
 > In the left pane under Contact Center find the section labeled Customer Experience  
@@ -106,9 +121,10 @@ Click Create
 > Click Create an Entry Point  
 >> Name: <copy><w class="podInfo">podName</w></copy>  
 Channel type: Custom messaging  
-Channel Asset: <w class="podInfo"></w>  
+Channel: <copy><w class="podInfo"></w></copy>  
+Channel Asset: <copy><w class="podInfo"></w></copy>  
 Service level threshold: <copy>3600</copy>  
-Custom messaging routing flow:  <w class="flow"></w>  
+Custom messaging routing flow:  <copy><w class="flow"></w></copy>  
 Version Label: Latest  
 >
 > Click Create  

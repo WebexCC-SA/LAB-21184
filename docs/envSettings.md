@@ -35,7 +35,7 @@ The webhook for Webex Contact Center Events has already been configured for you,
 Webex Bot ID: <copy><w class=botID></w></copy>  
 Webex API Base URL: <copy>https://webexapis.com</copy>  
 
-> WxCC Business Address: <copy><w class="podInfo"></w>-LAB-21184</copy>  
+> WxCC Business Address: <copy><w class="podInfo"></w>-LAB-21184@webex.bot</copy>  
 WxCC API Base URL: <copy>https://api.wxcc-us1.cisco.com</copy>   
 WxCC Client ID: <copy><w class=clientID></w></copy>  
 WxCC Client Secret: <copy><w class=clientSecret></w></copy>  

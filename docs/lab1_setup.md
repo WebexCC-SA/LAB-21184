@@ -5,7 +5,7 @@ Enter command: <copy>cd Downloads</copy>
 > ---
 
 
-#### Install Spec Kit
+#### Install Spec Kit (Skip this step as it has already been installed for this lab!)
 
 > Enter command: <copy>uv tool install specify-cli</copy>  
 > 

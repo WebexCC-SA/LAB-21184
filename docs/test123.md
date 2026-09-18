@@ -34,11 +34,11 @@ button:hover{
     <label for="PW">Password:</label>
     <copy> <w class="PW"></w></copy><br>
 
-    <label for="Queue">Queue  Name:</label>
+    <!-- <label for="Queue">Queue  Name:</label>
     <input type="text" id="Queue" readonly name="Queue" onChange="setItem(this.id, this.value)"><br>
     
     <label for="Team">Team Name:</label>
-    <input type="text" id="Team" readonly name="Team" onChange="setItem(this.id, this.value)"><br>
+    <input type="text" id="Team" readonly name="Team" onChange="setItem(this.id, this.value)"><br> -->
 
     <label for="clientID">Client ID:</label>
     <input type="text" id="clientID" name="clientID" onChange="setItem(this.id, this.value)"><br>

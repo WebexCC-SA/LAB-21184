@@ -108,7 +108,7 @@ nav:
         - Conclusion: wrappingItUp.md
       # - Conclusion: conclusion.md
   # - Topologies: topologies.md
-  - Tools And References: toolsAndReferences.md
+  - References: toolsAndReferences.md
   - How to use this guide:
       - Setting up and using the tool:
         - Initial Setup: howToUse/initialSetup.md

@@ -101,11 +101,13 @@ Send your first test message to create a new task in the Webex Contact Center: <
 ## Adding A Second Interaction
 
 ### Log Into the **Webex Messaging Web UI** in a Private Browser Session  
-> 
+> Open a private browser session/incognito browser session  
+> Navigate to: <copy>https://web.webex.com</copy>  
+> Log in using the user credentials  
 > 
 > ---
 
-
+### 
 
 ---
 

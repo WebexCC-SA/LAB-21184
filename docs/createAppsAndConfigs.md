@@ -10,7 +10,7 @@ For this lab you will need to create a **Service App** and a **Webex Bot** in th
 
 #### Create a new **Service App**
 > Log into the **[Developer Portal](https://developer.webex.com/){:target="_blank"}** **with your Admin Account** (If you are not already logged in)  
-> Click in the avatar menu in the upper left corner and select **My Webex Apps**  
+> Click in the avatar menu in the upper right corner and select **My Webex Apps**  
 > Click **Create A New App**  
 > Click **Create a Service APP**  
 >> App Name: <copy><w class="podInfo"></w>_sa</copy>  
@@ -44,7 +44,7 @@ For this lab you will need to create a **Service App** and a **Webex Bot** in th
 
 #### Create a new Webex Bot
 > Log into the **[Developer Portal](https://developer.webex.com/){:target="_blank"}** **with your Admin Account** (If you are not already logged in)  
-> Click in the avatar menu in the upper left corner and select **My Webex Apps**  
+> Click in the avatar menu in the upper right corner and select **My Webex Apps**  
 > Click **Create A New App**  
 > Click **Create a Bot**  
 >> Bot Name: <copy><w class="podInfo"></w>-LAB-21184</copy>  

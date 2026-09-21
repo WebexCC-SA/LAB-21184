@@ -49,16 +49,14 @@ button:hover{
     <label for="saId">Service App ID:</label>
     <input type="text" id="saId" name="saId" onChange="setItem(this.id, this.value)"><br>
 
-    <label for="at">Service App Access Token:</label>
-    <input type="text" id="at" name="at" onChange="setItem(this.id, this.value)"><br>
-    
     <label for="rt">Service App Refresh Token:</label>
     <input type="text" id="rt" name="rt" onChange="setItem(this.id, this.value)"><br>
-    
+
+    <label for="at">Service App Access Token:</label>
+    <input type="text" id="at" name="at" onChange="setItem(this.id, this.value)"><br>
+        
     <!-- <label for="saId">Service App ID:</label>
     <input type="text" id="saId" name="saId" onChange="setItem(this.id, this.value)"><br> -->
-
-
 
 
     <label for="botToken">Bot Token:</label>

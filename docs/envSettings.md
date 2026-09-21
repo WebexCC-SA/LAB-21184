@@ -41,6 +41,7 @@ WxCC Client ID: <copy><w class=clientID></w></copy>
 WxCC Client Secret: <copy><w class=clientSecret></w></copy>  
 WxCC Refresh Token: <copy><w class=rt></w></copy>  
 WxCC Token URL: <copy>https://webexapis.com/v1/access_token</copy>  
+ORGID: <copy><w class="orgID"></w></copy>
 
 > Webex Channel Name: <copy><w class=podInfo></w></copy>  
 

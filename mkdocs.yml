@@ -105,7 +105,7 @@ nav:
         - Adding Configuration Information: envSettings.md
         - Testing Your New Tool: testingYourTool.md
         - Putting Your Code on Github (Optional): pushToGitHub.md
-
+        - Conclusion: wrappingItUp.md
       # - Conclusion: conclusion.md
   # - Topologies: topologies.md
   - Tools And References: toolsAndReferences.md

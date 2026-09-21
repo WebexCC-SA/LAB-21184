@@ -45,6 +45,11 @@
 > ---
 
 
+## Delete the project folder from the lab PC
+> Close VS Code
+> Locate the project folder in the Downloads folder and delete it.
+> 
+> ---
 <!-- ---
 
 ---

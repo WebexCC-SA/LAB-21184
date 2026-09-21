@@ -263,4 +263,14 @@ Send your first test message to create a new task in the Webex Contact Center: <
 
 ---
 
+### Feel free to do some additional testing as time allows.
 
+## Post testing cleanup
+1. Log out of Webex messages as the user then close the browser tab
+2. Log out of Webex messages as the admin then close the browser tab
+3. Log out of the Agent Desktop then close the browser tab
+4. Close any Webex Collaboration Control Hub and Webex Developer Windows
+5. In the terminal of VS Code, press CTRL + D to shutdown your server
+6. If you would like to upload your code to GitHub, advance to the next page.
+7. If you do not want to upload your code to GitHub, close VS Code, delete the project folder from the lab PC, and advance to the **Conclusion** page.
+--- 

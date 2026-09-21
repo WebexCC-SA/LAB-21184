@@ -1,2 +1,2 @@
 ### Links
-[Spec Kit Documentation](https://github.github.io/spec-kit/)
+[Spec Kit Documentation](https://github.github.io/spec-kit/){:target="_blank"}

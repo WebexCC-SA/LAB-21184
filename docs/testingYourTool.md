@@ -32,7 +32,7 @@ In this section you will be testing the basic functionality of a new message cre
 ### Send a new message from Webex to your bot
 > In the Webex Messaging Web UI  
 >> In the search box at the top of the window, Enter your bot's address: <copy><w class="podInfo"></w>-LAB-21184@webex.bot</copy>  
-Select your bot from teh search results  
+Select your bot from the search results  
 Send your first test message to create a new task in the Webex Contact Center: <copy>First inbound test message</copy>  
 
 > ---
@@ -158,7 +158,7 @@ In this section you will be adding a second concurrent interaction from another 
 ### Send a new message from the **user** account's Webex to your bot
 > In the Webex Messaging Web UI  
 >> In the search box at the top of the window, Enter your bot's address: <copy><w class="podInfo"></w>-LAB-21184@webex.bot</copy>  
-Select your bot from teh search results  
+Select your bot from the search results  
 Send your first test message to create a new task in the Webex Contact Center: <copy>Message from user account</copy>  
 
 > ---

@@ -28,7 +28,7 @@ This will allow you to easily identify the changes which are made as you progres
 
 
 ## Analyze the tasks created against the Constitution, Spec, and Plan  
-> To ensure that all of the tasks are in teh correct order and do not cause conflicts, you will use the analyze skill/agent  
+> To ensure that all of the tasks are in the correct order and do not cause conflicts, you will use the analyze skill/agent  
 > In the Agent Prompt enter the command: <copy>/speckit-analyze</copy>  
 > If there are any issues, the AI will list them out along with how critical the issues are.  
 > If you have any critical issues, you will need to address them prior to implementation.  

@@ -109,13 +109,13 @@ nav:
       # - Conclusion: conclusion.md
   # - Topologies: topologies.md
   - References: toolsAndReferences.md
-  - How to use this guide:
-      - Setting up and using the tool:
-        - Initial Setup: howToUse/initialSetup.md
-        - Using the tool after the initial setup: howToUse/postInitial.md
-        - Publishing your changes: howToUse/syncChanges.md
-      - Styling and Advanced Features: 
-        - Markdown and Other References: howToUse/references.md
-        - Custom Features: howToUse/customFeatures.md
-        - Custom Admonitions: howToUse/admonition.md
+  # - How to use this guide:
+  #     - Setting up and using the tool:
+  #       - Initial Setup: howToUse/initialSetup.md
+  #       - Using the tool after the initial setup: howToUse/postInitial.md
+  #       - Publishing your changes: howToUse/syncChanges.md
+  #     - Styling and Advanced Features: 
+  #       - Markdown and Other References: howToUse/references.md
+  #       - Custom Features: howToUse/customFeatures.md
+  #       - Custom Admonitions: howToUse/admonition.md
  

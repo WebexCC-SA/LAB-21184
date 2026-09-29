@@ -105,7 +105,7 @@ Click Create
 >> Repeat the previous step for the other **Send Custom Message** node.  
 >> Click the Queue Contact Node and Select your queue: <copy><w class="Queue"></w></copy>  
 >> In the lower right corner, click the **Validation** switch  
->> Click the **Publish FLow** button
+>> Click the **Publish Flow** button
 >> Add a Comment: <copy>Updating flow for lab config</copy>  
 >> Click the **Publish Flow** button  
 >
